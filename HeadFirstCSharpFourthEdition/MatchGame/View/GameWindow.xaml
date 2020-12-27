@@ -1,0 +1,157 @@
+﻿<Window x:Class="MatchGame.View.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:MatchGame.ViewModel"
+        Title="Find all of the matching animals"
+        Width="400"
+        Height="450"
+        MinWidth="194"
+        MinHeight="270"
+        mc:Ignorable="d">
+    <Window.Resources>
+        <vm:GameViewModel x:Key="ViewModel" />
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="0,0,0,0" />
+            <Setter Property="Padding" Value="0,0,0,0" />
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderThickness" Value="0,0,0,0" />
+            <Setter Property="FontSize" Value="36" />
+        </Style>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource ViewModel}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0"
+                Grid.Column="0"
+                Command="{Binding FindMatchCommand}"
+                CommandParameter="0"
+                Content="{Binding Cards[0].Text}"
+                Style="{StaticResource ButtonStyle}"
+                Visibility="{Binding Cards[0].Visibility}" />
+        <Button Grid.Row="0"
+                Grid.Column="1"
+                Command="{Binding FindMatchCommand}"
+                CommandParameter="1"
+                Content="{Binding Cards[1].Text}"
+                Style="{StaticResource ButtonStyle}"
+                Visibility="{Binding Cards[1].Visibility}" />
+        <Button Grid.Row="0"
+                Grid.Column="2"
+                Command="{Binding FindMatchCommand}"
+                CommandParameter="2"
+                Content="{Binding Cards[2].Text}"
+                Style="{StaticResource ButtonStyle}"
+                Visibility="{Binding Cards[2].Visibility}" />
+        <Button Grid.Row="0"
+                Grid.Column="3"
+                Command="{Binding FindMatchCommand}"
+                CommandParameter="3"
+                Content="{Binding Cards[3].Text}"
+                Style="{StaticResource ButtonStyle}"
+                Visibility="{Binding Cards[3].Visibility}" />
+        <Button Grid.Row="1"
+                Grid.Column="0"
+                Command="{Binding FindMatchCommand}"
+                CommandParameter="4"
+                Content="{Binding Cards[4].Text}"
+                Style="{StaticResource ButtonStyle}"
+                Visibility="{Binding Cards[4].Visibility}" />
+        <Button Grid.Row="1"
+                Grid.Column="1"
+                Command="{Binding FindMatchCommand}"
+                CommandParameter="5"
+                Content="{Binding Cards[5].Text}"
+                Style="{StaticResource ButtonStyle}"
+                Visibility="{Binding Cards[5].Visibility}" />
+        <Button Grid.Row="1"
+                Grid.Column="2"
+                Command="{Binding FindMatchCommand}"
+                CommandParameter="6"
+                Content="{Binding Cards[6].Text}"
+                Style="{StaticResource ButtonStyle}"
+                Visibility="{Binding Cards[6].Visibility}" />
+        <Button Grid.Row="1"
+                Grid.Column="3"
+                Command="{Binding FindMatchCommand}"
+                CommandParameter="7"
+                Content="{Binding Cards[7].Text}"
+                Style="{StaticResource ButtonStyle}"
+                Visibility="{Binding Cards[7].Visibility}" />
+        <Button Grid.Row="2"
+                Grid.Column="0"
+                Command="{Binding FindMatchCommand}"
+                CommandParameter="8"
+                Content="{Binding Cards[8].Text}"
+                Style="{StaticResource ButtonStyle}"
+                Visibility="{Binding Cards[8].Visibility}" />
+        <Button Grid.Row="2"
+                Grid.Column="1"
+                Command="{Binding FindMatchCommand}"
+                CommandParameter="9"
+                Content="{Binding Cards[9].Text}"
+                Style="{StaticResource ButtonStyle}"
+                Visibility="{Binding Cards[9].Visibility}" />
+        <Button Grid.Row="2"
+                Grid.Column="2"
+                Command="{Binding FindMatchCommand}"
+                CommandParameter="10"
+                Content="{Binding Cards[10].Text}"
+                Style="{StaticResource ButtonStyle}"
+                Visibility="{Binding Cards[10].Visibility}" />
+        <Button Grid.Row="2"
+                Grid.Column="3"
+                Command="{Binding FindMatchCommand}"
+                CommandParameter="11"
+                Content="{Binding Cards[11].Text}"
+                Style="{StaticResource ButtonStyle}"
+                Visibility="{Binding Cards[11].Visibility}" />
+        <Button Grid.Row="3"
+                Grid.Column="0"
+                Command="{Binding FindMatchCommand}"
+                CommandParameter="12"
+                Content="{Binding Cards[12].Text}"
+                Style="{StaticResource ButtonStyle}"
+                Visibility="{Binding Cards[12].Visibility}" />
+        <Button Grid.Row="3"
+                Grid.Column="1"
+                Command="{Binding FindMatchCommand}"
+                CommandParameter="13"
+                Content="{Binding Cards[13].Text}"
+                Style="{StaticResource ButtonStyle}"
+                Visibility="{Binding Cards[13].Visibility}" />
+        <Button Grid.Row="3"
+                Grid.Column="2"
+                Command="{Binding FindMatchCommand}"
+                CommandParameter="14"
+                Content="{Binding Cards[14].Text}"
+                Style="{StaticResource ButtonStyle}"
+                Visibility="{Binding Cards[14].Visibility}" />
+        <Button Grid.Row="3"
+                Grid.Column="3"
+                Command="{Binding FindMatchCommand}"
+                CommandParameter="15"
+                Content="{Binding Cards[15].Text}"
+                Style="{StaticResource ButtonStyle}"
+                Visibility="{Binding Cards[15].Visibility}" />
+        <Button x:Name="TimeButton"
+                Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="4"
+                Command="{Binding ResetGameCommand}"
+                Content="{Binding TimeElapsedLabel, StringFormat='{}{0:F1}s'}"
+                Style="{StaticResource ButtonStyle}" />
+    </Grid>
+</Window>
